@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="demande.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mairie d'Adjarra/Demande</title>
+    <script>
+        function changetype() {
+            var stageType = document.getElementById("type").value;
+            var niveau = document.getElementById("niveau-etude");
+            var diplome = document.getElementById("diplome-obtenue");
+        
+            if (stageType === "Académique") {
+                niveau.style.display = "block";
+                diplome.style.display = "none";
+            } else if (stageType === "Professionnel") {
+                niveau.style.display = "none";
+                diplome.style.display = "block";
+            } else {
+                niveau.style.display = "none";
+                diplome.style.display = "none";
+            }
+        }
+        function helpwin() {
+            var helpUrl = "aide.html";
+            window.open(helpUrl, "_blank", "width=100,height=600");
+        }
+        </script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a class="logo">
+                <img src="amoirie.jpg" alt="Logo de la mairie d'Adjarra">
+                <div class="aaa">
+                    <p>République du Bénin</p>
+                    <div class="drap">
+                        <div class="vert"></div>
+                        <div class="jaune"></div>
+                        <div class="rouge"></div>
+                    </div>
+                    <p>Département de l'Ouémé</p>
+                    <p>Mairie d'Adjarra</p>
+                </div>
+            </a>
+            <div class="nav">
+                <p><a href="Acceuil.html" class="ppp">Accueil</a></p>
+                <p><a href="#demande" class="ppp">Demande</a></p>
+                <p><a href="presta.html" class="ppp">Nos Prestations</a></p>
+            </div>
+        </div>
+    </header>
+
+
+    <p id="demande"></p>
+    <main class="main">
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Page de demande de stage à Adjarra</h2>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adresse">Adresse :</label>
+                        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone :</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stage">Domaine de stage souhaité :</label>
+                        <select id="stage" name="stage" required>
+                            <option value="informatique">Informatique</option>
+                            <option value="amenagement">Aménagement</option>
+                            <option value="secretariat">Secrétariat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type de Stage :</label>
+                        <select id="type" name="type" required onchange="changetype()">
+                            <option value="">-- Sélectionner --</option>
+                            <option value="Académique">Académique</option>
+                            <option value="Professionnel">Professionnel</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="niveau-etude" style="display:none;">
+                        <label for="niveau">Niveau d'étude :</label>
+                        <select id="niveau" name="niveau">
+                            <option value="licence1">1ère</option>
+                            <option value="licence1">Tle</option>
+                            <option value="licence1">Licence 1</option>
+                            <option value="licence2">Licence 2</option>
+                            <option value="licence3">Licence 3</option>
+                            <option value="master1">Master 1</option>
+                            <option value="master2">Master 2</option>
+                            <option value="master3">Master 3</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group" id="diplome-obtenue" style="display:none;">
+                        <label for="diplome">Diplôme obtenu :</label>
+                        <select id="diplome" name="diplome">
+                            <option value="dt">DT</option>
+                            <option value="license">Licence</option>
+                        </select>
+                    </div>         
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Écrivez-nous"></textarea>
+                    </div>
+                    <div>
+                        <center> <h1>Envoyer un fichier</h1></center>
+                        <form action="https://votre-serveur.com/upload.php" method="POST" enctype="multipart/form-data">
+                        <label for="fichier">Sélectionner un fichier :</label>
+                        <a href="#" onclick="helpwin(); return false;"><button>Aide</button></a>
+                        <input type="file" id="fichier" name="fichier" required><br><br>
+                    </div><br><br>
+                        <div class="form-submit">
+                            <button type="submit" class="btn">Soumettre</button>
+                        </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <p id="contact"></p>
+    <form class="cont" id="cont">
+        <h1>Contact</h1>
+        <div class="all">
+            <div class="ich">
+                <div class="icon" class="iche">
+                    <nav>
+                        <a href="tel:+22941853578" class="txt"><img class="qq" src="tel.jpeg" alt="facebook"> : +22941853578</a>
+                    </nav>
+                    <nav>
+                        <a href="mailto:mairie.adjarra@mairie.com" class="txt"><img class="qq" src="email.jpeg" alt="facebook"> : mairie.adjarra@mairie.com</a>
+                    </nav>
+                    <nav>
+                        <a href="https://www.facebook.com/Mairieadjarra" class="txt"><img class="qq" src="face.jpeg" alt="facebook"> : Mairieadjarra</a>
+                    </nav>
+                    <nav>
+                        <a href="https://www.instagram.com/mairiedadjarra" class="txt"><img class="qq" src="insta.jpeg" alt="instagram"> : mairiedadjarra</a>
+                    </nav>
+                    <nav>
+                        <a href="https://x.com/MairieAdjarra" class="txt"><img class="qq" src="tweeter.jpeg" alt="tweeter"> : MairieAdjarra</a>
+                    </nav>
+                </div>
+                <div class="hour" class="iche">
+                    <table border="2px">
+                        <tr><th colspan="4">Nos Heurs d'ouverture</th></tr>
+                        <tr>
+                            <td colspan="2">Matin</td>
+                            <td colspan="2">Soir</td>
+                        </tr>
+                        <tr>
+                            <td>Ouverture</td>
+                            <td>Fermeture</td>
+                            <td>Ouverture</td>
+                            <td>Fermeture</td>
+                        </tr>
+                        <tr>
+                            <td>08h 00min</td>
+                            <td>12h 30min</td>
+                            <td>14h 30min</td>
+                            <td>17h 30min</td>
+                        </tr>
+                        <tr><th colspan="4">NB : Il y a la cérémonie des couleurs tout les Lundi à 07h 45min</th></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="carte" class="iche">
+                <div>
+                    <iframe src="https://maps.google.com/maps?q=Adjarra&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <form class="com">
+                <label for="commentaire">Commentaire :</label>
+                <textarea id="com" name="commentaire" rows="5" placeholder="Donnez votre avis sur nous"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>        
+    </form>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <nav>
+                <a href="Acceuil.html" class="ppp">Accueil</a>
+                <a href="presta.html" class="ppp">Nos Prestations</a>
+                <a href="#contact" class="ppp">Contact</a>
+            </nav>
+            <nav class="lien">
+                <a href="https://www.facebook.com/Mairieadjarra"><button><img class="qq" src="face.jpeg" alt="facebook"></button></a>
+                <a href="https://www.instagram.com/mairiedadjarra"><button><img class="qq" src="insta.jpeg" alt="instagram"></button></a>
+                <a href="https://x.com/MairieAdjarra"><button><img class="qq" src="tweeter.jpeg" alt="tweeter"></button></a>
+            </nav>
+            <div class="copyright">&copy; 2024 Mairie d'Adjarra. Tous droits réservés.</div>
+            <div class="drap">
+                <div class="vert"></div>
+                <div class="jaune"></div>
+                <div class="rouge"></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
